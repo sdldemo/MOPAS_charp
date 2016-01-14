@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 
@@ -22,6 +22,9 @@ namespace Mopas.Tests
 
             Domain domain = Domain.GetDomain(dc);
 
+            // TODO: AI issue #8, High, LDAP Injection, https://github.com/sdldemo/MOPAS_charp/issues/8
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx?address=%7bfilter%7d+%3d+* HTTP/1.1
+            // Host:localhost
             DirectorySearcher ds = new DirectorySearcher(domain.GetDirectoryEntry(), filter);
             using (SearchResultCollection src = ds.FindAll())
             {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace Mopas.Tests
@@ -17,6 +17,9 @@ namespace Mopas.Tests
 
             if (fileName != null)
             {
+                // TODO: AI issue #2, High, Arbitrary File Reading, https://github.com/sdldemo/MOPAS_charp/issues/2
+                // GET /Tests/1 INPUT DATA VERIFICATION/11 Path Traversal/PathTraversal.aspx?report=Default.aspx HTTP/1.1
+                // Host:localhost
                 using (var file = new StreamReader("D:\\AI\\Reports\\" + fileName))
                 {
                     string reportLines = "";

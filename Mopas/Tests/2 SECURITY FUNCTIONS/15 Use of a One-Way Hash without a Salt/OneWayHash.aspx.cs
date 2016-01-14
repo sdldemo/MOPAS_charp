@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -26,6 +26,10 @@ namespace Mopas.Tests
                 foreach (byte value in hash)
                     result += value.ToString("x2");
 
+                // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
+                // GET /Tests/2 SECURITY FUNCTIONS/15 Use of a One-Way Hash without a Salt/OneWayHash.aspx HTTP/1.1
+                // Host:localhost
+                // (System.Security.Cryptography.MD5.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes(this.Request.Params["password"])).GetEnumerator().MoveNext() && (System.Security.Cryptography.MD5.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes(this.Request.Params["password"])).GetEnumerator().Current.ToString("x2") == "<script>alert(0)</script>"))
                 Response.Write(result);
             }
         }

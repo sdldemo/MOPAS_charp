@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace Mopas.Tests
@@ -25,6 +25,10 @@ namespace Mopas.Tests
                         reportLines += line;
                     }
 
+                    // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
+                    // GET /Tests/1 INPUT DATA VERIFICATION/11 Path Traversal/PathTraversal.aspx?report=__AI_htprljortgejpry HTTP/1.1
+                    // Host:localhost
+                    // (System.IO.StreamReader.ReadLine().GetEnumerator().MoveNext() && (System.IO.StreamReader.ReadLine().GetEnumerator().Current == "<script>alert(0)</script>"))
                     Response.Write("<b>Report:</b></br>" + reportLines);
                 }
             }

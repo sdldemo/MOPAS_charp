@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.DirectoryServices;
 using System.DirectoryServices.ActiveDirectory;
 
@@ -31,6 +31,10 @@ namespace Mopas.Tests
                 }
             }
 
+            // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
+            // GET /Tests/1 INPUT DATA VERIFICATION/9 LDAP Injection/Ldap.aspx HTTP/1.1
+            // Host:localhost
+            // (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().MoveNext() && (System.DirectoryServices.DirectorySearcher.FindAll().GetEnumerator().Current.ToString() == "<script>alert(0)</script>"))
             Response.Write(result);
         }
     }

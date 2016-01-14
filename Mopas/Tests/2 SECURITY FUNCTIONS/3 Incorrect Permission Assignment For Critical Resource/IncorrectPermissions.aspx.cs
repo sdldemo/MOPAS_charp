@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 
@@ -27,6 +27,10 @@ namespace Mopas.Tests
 
             myProcess.StartInfo = new ProcessStartInfo(@"cacls ", Path.Combine(filePath, fileName) + " /p apache:f");
 
+            // TODO: AI issue #5, High, OS commanding, https://github.com/sdldemo/MOPAS_charp/issues/5
+            // GET /Tests/2 SECURITY FUNCTIONS/3 Incorrect Permission Assignment For Critical Resource/IncorrectPermissions.aspx HTTP/1.1
+            // Host:localhost
+            // (System.Diagnostics.Process == " | whoami")
             myProcess.Start();
 
             myProcess.Close();

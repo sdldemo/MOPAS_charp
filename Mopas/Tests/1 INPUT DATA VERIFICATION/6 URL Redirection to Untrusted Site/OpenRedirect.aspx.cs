@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Mopas.Tests
 {
@@ -15,6 +15,9 @@ namespace Mopas.Tests
             string nurl = Request.Params["nurl"];
             if (nurl != null)
             {
+                // TODO: AI issue #6, High, Open Redirect, https://github.com/sdldemo/MOPAS_charp/issues/6
+                // GET /Tests/1 INPUT DATA VERIFICATION/6 URL Redirection to Untrusted Site/OpenRedirect.aspx?nurl=http%3a%2f%2flocalhost HTTP/1.1
+                // Host:localhost
                 Response.Redirect(nurl);
             }
             else

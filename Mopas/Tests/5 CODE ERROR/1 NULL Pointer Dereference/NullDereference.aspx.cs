@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace Mopas.Tests
@@ -17,6 +17,9 @@ namespace Mopas.Tests
 
             try
             {
+                // TODO: AI issue #2, High, Arbitrary File Reading, https://github.com/sdldemo/MOPAS_charp/issues/2
+                // GET /Tests/5 CODE ERROR/1 NULL Pointer Dereference/NullDereference.aspx?file_name=Default.aspx HTTP/1.1
+                // Host:localhost
                 FileStream fs = File.OpenRead(fileName);
 
                 //...

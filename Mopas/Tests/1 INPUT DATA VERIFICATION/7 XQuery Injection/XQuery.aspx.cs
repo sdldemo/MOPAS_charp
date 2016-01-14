@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Xml;
 
 namespace Mopas.Tests
@@ -39,6 +39,9 @@ namespace Mopas.Tests
             
             if (role != null)
             {
+                // TODO: AI issue #7, High, XPath Injection, https://github.com/sdldemo/MOPAS_charp/issues/7
+                // GET /Tests/1 INPUT DATA VERIFICATION/7 XQuery Injection/XQuery.aspx?role=1%27+and+1%3d%271 HTTP/1.1
+                // Host:localhost
                 foreach (XmlNode target in doc.SelectNodes("/root/roles/role[@='" + role + "']"))
                 {
                     result = result + (target != null ? target.InnerText : "No role " + role);

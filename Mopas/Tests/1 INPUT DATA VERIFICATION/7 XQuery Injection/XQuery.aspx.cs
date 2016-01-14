@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Xml;
 
 namespace Mopas.Tests
@@ -44,6 +44,10 @@ namespace Mopas.Tests
                     result = result + (target != null ? target.InnerText : "No role " + role);
                 }
 
+                // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
+                // GET /Tests/1 INPUT DATA VERIFICATION/7 XQuery Injection/XQuery.aspx?role=__AI_omweybtvdlfqkdq HTTP/1.1
+                // Host:localhost
+                // ((System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_omweybtvdlfqkdq") + "']")).GetEnumerator().MoveNext() && (System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_omweybtvdlfqkdq") + "']")).GetEnumerator().Current != null)) && ((System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_omweybtvdlfqkdq") + "']")).GetEnumerator().Current.InnerText) == "<script>alert(0)</script>"))
                 Response.Write(result);
             }
 

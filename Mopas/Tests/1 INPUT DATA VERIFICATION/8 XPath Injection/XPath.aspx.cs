@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Xml;
 
 namespace Mopas.Tests
@@ -38,6 +38,9 @@ namespace Mopas.Tests
 
             if (name != null)
             {
+                // TODO: AI issue #7, High, XPath Injection, https://github.com/sdldemo/MOPAS_charp/issues/7
+                // GET /Tests/1 INPUT DATA VERIFICATION/8 XPath Injection/XPath.aspx?name=1%27+and+1%3d%271 HTTP/1.1
+                // Host:localhost
                 XmlNode target = doc.SelectSingleNode("/root/users/user[@name='" + name + "']");
                 string result = target != null ? target.InnerText : "No user " + name;
                 Response.Write(result);

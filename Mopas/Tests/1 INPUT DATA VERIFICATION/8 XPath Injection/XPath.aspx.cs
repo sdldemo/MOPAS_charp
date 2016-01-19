@@ -41,9 +41,9 @@ namespace Mopas.Tests
                 XmlNode target = doc.SelectSingleNode("/root/users/user[@name='" + name + "']");
                 string result = target != null ? target.InnerText : "No user " + name;
                 // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
-                // GET /Tests/1 INPUT DATA VERIFICATION/8 XPath Injection/XPath.aspx?name=__AI_cetgqcccgwlgrqb HTTP/1.1
+                // GET /Tests/1 INPUT DATA VERIFICATION/8 XPath Injection/XPath.aspx?name=__AI_opcnfcggphtxapb HTTP/1.1
                 // Host:localhost
-                // ((System.Xml.XmlDocument.SelectSingleNode((("/root/users/user[@name='" + "__AI_cetgqcccgwlgrqb") + "']")) != null) && (System.Xml.XmlDocument.SelectSingleNode((("/root/users/user[@name='" + "__AI_cetgqcccgwlgrqb") + "']")).InnerText == "<script>alert(0)</script>"))
+                // ((System.Xml.XmlDocument.SelectSingleNode((("/root/users/user[@name='" + "__AI_opcnfcggphtxapb") + "']")) != null) && (System.Xml.XmlDocument.SelectSingleNode((("/root/users/user[@name='" + "__AI_opcnfcggphtxapb") + "']")).InnerText == "<script>alert(0)</script>"))
                 Response.Write(result);
             }
 

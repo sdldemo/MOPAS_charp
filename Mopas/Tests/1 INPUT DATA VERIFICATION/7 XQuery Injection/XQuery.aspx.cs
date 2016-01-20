@@ -45,9 +45,9 @@ namespace Mopas.Tests
                 }
 
                 // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
-                // GET /Tests/1 INPUT DATA VERIFICATION/7 XQuery Injection/XQuery.aspx?role=__AI_skcorbcoviwnfby HTTP/1.1
+                // GET /Tests/1 INPUT DATA VERIFICATION/7 XQuery Injection/XQuery.aspx?role=__AI_ymupcjryblpfhpc HTTP/1.1
                 // Host:localhost
-                // ((System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_skcorbcoviwnfby") + "']")).GetEnumerator().MoveNext() && (System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_skcorbcoviwnfby") + "']")).GetEnumerator().Current != null)) && ((System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_skcorbcoviwnfby") + "']")).GetEnumerator().Current.InnerText) == "<script>alert(0)</script>"))
+                // ((System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_ymupcjryblpfhpc") + "']")).GetEnumerator().MoveNext() && (System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_ymupcjryblpfhpc") + "']")).GetEnumerator().Current != null)) && ((System.Xml.XmlDocument.SelectNodes((("/root/roles/role[@='" + "__AI_ymupcjryblpfhpc") + "']")).GetEnumerator().Current.InnerText) == "<script>alert(0)</script>"))
                 Response.Write(result);
             }
 

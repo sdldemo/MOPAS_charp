@@ -26,7 +26,7 @@ namespace Mopas.Tests
                     }
 
                     // TODO: AI issue #3, High, Cross-site Scripting, https://github.com/sdldemo/MOPAS_charp/issues/3
-                    // GET /Tests/1 INPUT DATA VERIFICATION/11 Path Traversal/PathTraversal.aspx?report=__AI_vujugiissdvcdet HTTP/1.1
+                    // GET /Tests/1 INPUT DATA VERIFICATION/11 Path Traversal/PathTraversal.aspx?report=__AI_kypywstintvambj HTTP/1.1
                     // Host:localhost
                     // (System.IO.StreamReader.ReadLine().GetEnumerator().MoveNext() && (System.IO.StreamReader.ReadLine().GetEnumerator().Current == "<script>alert(0)</script>"))
                     Response.Write("<b>Report:</b></br>" + reportLines);
